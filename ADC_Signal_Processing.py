@@ -33,9 +33,9 @@ except:
 detection_threshold = 0.075  # type: float # volts
 
 # Instatiate Rasp Pi GPIO Pins for test purposes
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(18, GPIO.OUT)
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setwarnings(False)
+# GPIO.setup(18, GPIO.OUT)
 
 # define the sampling rate for the analog to digital converter
 sampling_rate = 100000.0  # 100kHz
