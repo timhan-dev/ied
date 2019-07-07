@@ -147,6 +147,10 @@ class MCP3201(object):
         signal_multiplied = signal * sinwave
         return signal_multiplied
 
+    def array(index):
+        array[index] = ADC_Voltage
+        return array
+
 
 if __name__ == '__main__':
     SPI_bus = 0
@@ -166,7 +170,7 @@ if __name__ == '__main__':
             # print("MCP3201 output code (MSB-mode): %d" % ADC_output_code)
             # print("MCP3201 voltage: %0.2f V" % ADC_voltage)
 
-            array[i] = ADC_voltage
+            array(i)
             # sleep(0.1)  # wait minimum of 100 ms between ADC measurements
             i = i + 1
             # print(array)
@@ -202,7 +206,7 @@ if __name__ == '__main__':
         # plt.xlim(0,500)
         # plt.show()
 
-        data_extracted = fft_signal_filtered[43500:46500]
+        data_extracted = signal_filtered[43500:46500]
         threshold_avg = sum(data_extracted) / len(data_extracted)
         threshold_max = max(data_extracted)
 
